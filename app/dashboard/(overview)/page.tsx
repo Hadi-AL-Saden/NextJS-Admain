@@ -9,9 +9,8 @@ import { LatestInvoicesSkeleton } from '@/app/ui/skeletons';
 
 export default async function Page() {
 
-  
-  const {numberOfCustomers,numberOfInvoices, totalPaidInvoices, totalPendingInvoices} = await fetchCardData();
 
+  const {numberOfCustomers,numberOfInvoices, totalPaidInvoices, totalPendingInvoices} = await fetchCardData();
   return (
     <main >
       <h1 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>
@@ -34,7 +33,6 @@ export default async function Page() {
         <Suspense fallback={<LatestInvoicesSkeleton />}>
           <LatestInvoices/>
           </Suspense>
-        
       </div>
     </main>
   );
